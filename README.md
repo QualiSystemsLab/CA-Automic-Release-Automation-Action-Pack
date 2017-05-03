@@ -25,7 +25,11 @@ The full steps for recreating the action pack by hand are also included below.
 
 A limitation of this implementation:
 To work around certificate issues and to simplify programming on the Automic side, the 
-Automic actions are currently written to connect to a relay server, implemented in Python with the Flask library, rather than the CloudShell sandbox API directly. The source code of this relay is in this repo in sandbox_api_relay.py.
+Automic actions connect to a relay server that performs additional logic beyond calling the CloudShell API 
+(e.g. searching CloudShell API output for patterns, polling for sandbox setup and test completion). 
+The source code of this relay is in this repo in sandbox_api_relay.py. For a production action pack release, 
+all the logic in the relay would be moved to a native Automic code if possible, so that Automic could communicate
+directly with the stock CloudShell API.
 
 
 We defined a top-level workflow "FlexApp endtoend release" that represents an app release pipeline (playing the 
