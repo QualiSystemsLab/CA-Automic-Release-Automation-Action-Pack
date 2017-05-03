@@ -158,6 +158,9 @@ BlazeMeter test:
 
 # Creating the Automic action pack
 
+Try to import the zip from action-pack-source. If it works, you can skip the rest of this section. If there are issues, 
+you may need to create the action pack manually according to the following steps.
+
 ## How to create a REST action
 First create an action pack called QUALI_SANDBOX.
 
@@ -170,40 +173,90 @@ Continue to create the action:
 
 
 ## Login action
+General:
 ![](screenshots/04%20login%20action%20general.png)
+
+Request:
 ![](screenshots/05%20login%20action%20request.png)
+
+Response:
 ![](screenshots/06%20login%20action%20response.png)
+
+Variables:
 ![](screenshots/07%20login%20action%20variables.png)
+
+Prompt values:
 ![](screenshots/08%20login%20action%20prompt%20set.png)
 
 ## Start Sandbox action
+General:
+
 ![](screenshots/09%20start%20sandbox%20general.png)
+
+Web Service timeout:
 ![](screenshots/10%20start%20sandbox%20web%20service.png)
+
+Request:
 ![](screenshots/11%20start%20sandbox%20request.png)
+
+Response:
 ![](screenshots/12%20start%20sandbox%20response.png)
+
+Variables:
 ![](screenshots/13%20start%20sandbox%20variables.png)
+
+Prompt values:
 ![](screenshots/14%20start%20sandbox%20prompt.png)
 
 ## Run Test action
+General:
 ![](screenshots/15%20run%20test%20action%20general.png)
+
+Web Service timeout:
 ![](screenshots/16%20run%20test%20action%20web%20service.png)
+
+Request:
 ![](screenshots/17%20run%20test%20action%20request.png)
+
+Response:
 ![](screenshots/18%20run%20test%20action%20response.png)
+
+Variables:
 ![](screenshots/19%20run%20test%20action%20variables.png)
+
+Prompt values:
 ![](screenshots/20%20run%20test%20action%20prompt.png)
 
 ## Wait For Test action
+General:
 ![](screenshots/21%20wait%20for%20test%20general.png)
+
+Web Service timeout:
 ![](screenshots/22%20wait%20for%20test%20action%20web%20service.png)
+
+Request:
 ![](screenshots/23%20wait%20for%20test%20action%20request.png)
+
+Response:
 ![](screenshots/24%20wait%20for%20test%20action%20response.png)
+
+Variables:
 ![](screenshots/25%20wait%20for%20test%20action%20variables.png)
+
+Prompt values:
 ![](screenshots/26%20wait%20for%20test%20action%20prompt.png)
 
 ## Stop Sandbox
+General:
 ![](screenshots/27%20stop%20sandbox%20action%20general.png)
+
+Request:
 ![](screenshots/28%20stop%20sandbox%20action%20request.png)
+
+Response:
 ![](screenshots/29%20stop%20sandbox%20action%20variables.png)
+
+Prompt values:
 ![](screenshots/30%20stop%20sandbox%20action%20prompt.png)
 
 
