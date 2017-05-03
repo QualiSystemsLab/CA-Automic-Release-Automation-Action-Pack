@@ -23,11 +23,9 @@ and workflow-source/.
 
 The full steps for recreating the action pack by hand are also included below.
 
-
+A limitation of this implementation:
 To work around certificate issues and to simplify programming on the Automic side, the 
-Automic actions are written to connect to a REST proxy, implemented in Python with the Flask library, 
-that performs CloudShell sandbox API calls and manipulates the results. The source code of this proxy is in this repo. 
-The full API is described below.
+Automic actions are currently written to connect to a relay server, implemented in Python with the Flask library, rather than the CloudShell sandbox API directly. The source code of this relay is in this repo in sandbox_api_relay.py.
 
 
 We defined a top-level workflow "FlexApp endtoend release" that represents an app release pipeline (playing the 
