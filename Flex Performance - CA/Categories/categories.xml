@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CategoryList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.qualisystems.com/ResourceManagement/CategorySchema.xsd">
+  <Category Name="LaaS" Description="" Catalog="Environment" ImagePath="LaaS(NFONWQ1N).png">
+    <ChildCategories>
+      <CategoryInfo Name="Development" Description="" Catalog="Environment" ImagePath="Development(YUDOJFS9).png">
+        <ChildCategories />
+      </CategoryInfo>
+    </ChildCategories>
+  </Category>
+  <Category Name="Applications" Description="" Catalog="Service" ImagePath="Applications(ULCDCGZ5).png">
+    <ChildCategories />
+  </Category>
+</CategoryList>

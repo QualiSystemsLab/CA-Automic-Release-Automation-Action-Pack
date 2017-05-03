@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TopologyInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Details Name="Flex Performance - CA" Alias="Flex Performance - CA" Driver="Python Setup &amp; Teardown" SetupDuration="2" TeardownDuration="2" Public="true" ImageName="Flex Performance - CA.png" DefaultDuration="120">
+    <Description>Pre-production Flex deployment</Description>
+    <Instructions>&lt;iframe src="/Instruction/Demos/Flex" scrolling="yes" width="100%" height="100%" frameborder="0"&gt;&lt;/iframe&gt;</Instructions>
+    <Categories>
+      <Category Name="LaaS" SubCategory="Development" />
+    </Categories>
+    <Scripts>
+      <Script Name="Default Sandbox Teardown" />
+      <Script Name="Default Sandbox Setup" />
+    </Scripts>
+    <Diagram Zoom="0.8" NodeSize="Medium" />
+  </Details>
+  <Services>
+    <Service PositionX="2931" PositionY="42" Alias="Admin-Utility Service" ServiceName="Admin-Utility Service">
+      <Attributes>
+        <Attribute Name="Execution Server Selector" Value="" />
+        <Attribute Name="Auto Add To Reservation" Value="False" />
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+    </Service>
+  </Services>
+  <Apps>
+    <App PositionX="123.56302521008399" PositionY="515.19047619047615" TemplateName="Generic Cloud App">
+      <AppResourceInfo Name="Database Node - 1" ImagePath="Flex Performance - CA_Database Node - 1.png">
+        <AppResources>
+          <AppResource ModelName="Linux Virtual Machine" Driver="">
+            <Attributes>
+              <Attribute Name="CPU Cores" Value="1" />
+              <Attribute Name="Enable_SSH" Value="True" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="MSO" />
+              <Attribute Name="OS" Value="Ubuntu" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="RAM Size" Value="2048" />
+              <Attribute Name="SSH_Port" Value="22" />
+              <Attribute Name="User" Value="root" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="1523" PositionY="248.58823529411762" TemplateName="SaaS Endpoint 5">
+      <AppResourceInfo Name="BlazeMeter" ImagePath="Flex Performance - CA_BlazeMeter.png">
+        <AppResources>
+          <AppResource ModelName="SaaS Application" Driver="">
+            <Attributes>
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="https://a.blazemeter.com/app/#/accounts/136980/workspaces/130437/dashboard" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="705.00355113636363" PositionY="42" TemplateName="Sales Web App 2">
+      <AppResourceInfo Name="Apache Web App 2" ImagePath="Flex Performance - CA_Apache Web App 2.png">
+        <AppResources>
+          <AppResource ModelName="Sales Web App" Driver="">
+            <Attributes>
+              <Attribute Name="Comm_IP" Value="" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="http://54.71.157.30" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="705.00355113636363" PositionY="396.25" TemplateName="Sales Web App 2">
+      <AppResourceInfo Name="Apache Web App 3" ImagePath="Flex Performance - CA_Apache Web App 3.png">
+        <AppResources>
+          <AppResource ModelName="Sales Web App" Driver="">
+            <Attributes>
+              <Attribute Name="Comm_IP" Value="" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="http://54.71.157.30" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="705.00355113636363" PositionY="216.19047619047615" TemplateName="Sales Web App 2">
+      <AppResourceInfo Name="Apache Web App 1" ImagePath="Flex Performance - CA_Apache Web App 1.png">
+        <AppResources>
+          <AppResource ModelName="Sales Web App" Driver="">
+            <Attributes>
+              <Attribute Name="Comm_IP" Value="" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="http://54.71.157.30" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="418.00355113636363" PositionY="515.19047619047615" TemplateName="Generic Cloud App">
+      <AppResourceInfo Name="Generic Cloud App1">
+        <AppResources>
+          <AppResource ModelName="Linux Virtual Machine" Driver="">
+            <Attributes>
+              <Attribute Name="CPU Cores" Value="1" />
+              <Attribute Name="Enable_SSH" Value="True" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="MSO" />
+              <Attribute Name="OS" Value="Ubuntu" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="RAM Size" Value="2048" />
+              <Attribute Name="SSH_Port" Value="22" />
+              <Attribute Name="User" Value="root" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="287" PositionY="216.19047619047615" TemplateName="Generic Cloud App">
+      <AppResourceInfo Name="Flex Core - Server 2" ImagePath="Flex Performance - CA_Flex Core - Server 2.png">
+        <AppResources>
+          <AppResource ModelName="Linux Virtual Machine" Driver="">
+            <Attributes>
+              <Attribute Name="CPU Cores" Value="1" />
+              <Attribute Name="Enable_SSH" Value="True" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="MSO" />
+              <Attribute Name="OS" Value="Ubuntu" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="RAM Size" Value="2048" />
+              <Attribute Name="SSH_Port" Value="22" />
+              <Attribute Name="User" Value="root" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="1151.2689075630251" PositionY="248.58823529411762" TemplateName="">
+      <AppResourceInfo Name="Flex Load Balancer" ImagePath="Flex Performance - CA_Flex Load Balancer.png">
+        <AppResources>
+          <AppResource ModelName="Apache Website" Driver="">
+            <Attributes>
+              <Attribute Name="Enable_SSH" Value="" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="http://52.88.191.139/1.html" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="WMnxQLcY7iXyrJdFJVJHPKCQiQaa4qgw1xXyXok7VmTxRJnn9fW1fMAiXzwlVLwX" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.nano" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+  </Apps>
+  <Routes>
+    <Connector Source="Flex Load Balancer" Target="BlazeMeter" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Apache Web App 2" Target="Flex Load Balancer" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Apache Web App 1" Target="Flex Load Balancer" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Apache Web App 3" Target="Flex Load Balancer" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Flex Core - Server 2" Target="Apache Web App 2" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Flex Core - Server 2" Target="Apache Web App 1" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Flex Core - Server 2" Target="Apache Web App 3" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Flex Core - Server 2" Target="Generic Cloud App1" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Flex Core - Server 2" Target="Database Node - 1" Direction="Bi" SourceType="Service" TargetType="Service" />
+  </Routes>
+  <Inputs>
+    <GlobalInput Name="Cloud Provider" Type="Lookup">
+      <PossibleValues>
+        <Value>AWS EMEA</Value>
+        <Value>AWS Oregon</Value>
+        <Value>Azure West Coast</Value>
+        <Value>Openstack San Jose</Value>
+        <Value>vCenter San Jose</Value>
+      </PossibleValues>
+    </GlobalInput>
+  </Inputs>
+</TopologyInfo>

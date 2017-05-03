@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppTemplateInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AppResourceInfo Name="Generic Cloud App">
+    <AppResources>
+      <AppResource ModelName="Linux Virtual Machine" Driver="">
+        <Attributes>
+          <Attribute Name="CPU Cores" Value="1" />
+          <Attribute Name="Enable_SSH" Value="True" />
+          <Attribute Name="ExecutionServer" Value="Production" />
+          <Attribute Name="Lab" Value="MSO" />
+          <Attribute Name="OS" Value="Ubuntu" />
+          <Attribute Name="Password" Value="" />
+          <Attribute Name="Power State" Value="Off" />
+          <Attribute Name="RAM Size" Value="2048" />
+          <Attribute Name="SSH_Port" Value="22" />
+          <Attribute Name="User" Value="root" />
+        </Attributes>
+      </AppResource>
+    </AppResources>
+    <DeploymentPaths>
+      <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="false">
+        <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+          <Attributes>
+            <Attribute Name="ExecutionServer" Value="Production" />
+            <Attribute Name="User" Value="" />
+            <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+            <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+            <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+            <Attribute Name="Instance Type" Value="t2.micro" />
+          </Attributes>
+        </DeploymentService>
+      </DeploymentPath>
+    </DeploymentPaths>
+  </AppResourceInfo>
+  <Categories>
+    <Category>Applications</Category>
+  </Categories>
+</AppTemplateInfo>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataModelInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.qualisystems.com/ResourceManagement/DataModelSchema.xsd">
+  <Attributes>
+    <AttributeInfo xsi:type="LookupAttributeDetails" Name="ExecutionServer" Type="Lookup" DefaultValue="Sandbox" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Execution Server Selector" />
+        <Rule Name="Admin Only" />
+      </Rules>
+      <LookupValues>
+        <LookupValue NumericValue="0" StringValue="Production" />
+        <LookupValue NumericValue="1" StringValue="Sandbox" />
+        <LookupValue NumericValue="2" StringValue="On-Premise" />
+      </LookupValues>
+    </AttributeInfo>
+    <AttributeInfo Name="OS" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo xsi:type="LookupAttributeDetails" Name="Power State" Type="Lookup" DefaultValue="Off" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+      <LookupValues>
+        <LookupValue NumericValue="0" StringValue="On" />
+        <LookupValue NumericValue="1" StringValue="Off" />
+      </LookupValues>
+    </AttributeInfo>
+    <AttributeInfo xsi:type="LookupAttributeDetails" Name="Lab" Type="Lookup" DefaultValue="Global" Description="Name of the Lab (=demo) associated with the resource" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Available For Abstract Resources" />
+        <Rule Name="Displayed In Search Filters" />
+      </Rules>
+      <LookupValues>
+        <LookupValue NumericValue="0" StringValue="MSO" />
+        <LookupValue NumericValue="1" StringValue="Virtual Lab" />
+        <LookupValue NumericValue="2" StringValue="Cyber Range" />
+        <LookupValue NumericValue="3" StringValue="Training" />
+        <LookupValue NumericValue="4" StringValue="Continous Integration" />
+        <LookupValue NumericValue="5" StringValue="Physical Infrastructure" />
+        <LookupValue NumericValue="6" StringValue="Global" />
+        <LookupValue NumericValue="7" StringValue="CloudShell Latest" />
+        <LookupValue NumericValue="9" StringValue="Resource" />
+      </LookupValues>
+    </AttributeInfo>
+    <AttributeInfo Name="CPU Cores" Type="Numeric" DefaultValue="1" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="RAM Size" Type="Numeric" DefaultValue="2048" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="User" Type="String" DefaultValue="" Description="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="Password" Type="Password" DefaultValue="3M3u7nkDzxWb0aJ/IZYeWw==" Description="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="Web Interface" Type="String" DefaultValue="" Description="Used to determine location of web interface" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="Execution Server Selector" Type="String" DefaultValue="" Description="This attribute points to a pre-define group of execution servers. Usually used for different sites or domains." IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+        <Rule Name="Execution Server Selector" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="Auto Add To Reservation" Type="Boolean" DefaultValue="False" IsReadOnly="false">
+      <Rules />
+    </AttributeInfo>
+    <AttributeInfo Name="Enable_SSH" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="SSH_Port" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="Comm_IP" Type="String" DefaultValue="" Description="IP to actually use when communicating with the device" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Admin Only" />
+      </Rules>
+    </AttributeInfo>
+  </Attributes>
+  <ResourceFamilies>
+    <ResourceFamily Name="Admin-Services" Description="" IsAdminOnly="true" IsService="true" ServiceType="Regular">
+      <AttachedAttributes>
+        <AttachedAttribute Name="ExecutionServer" IsOverridable="true" IsLocal="true" UserInput="true">
+          <AllowedValues />
+        </AttachedAttribute>
+      </AttachedAttributes>
+      <AttributeValues>
+        <AttributeValue Name="ExecutionServer" Value="Production" />
+      </AttributeValues>
+      <Models>
+        <ResourceModel Name="Admin-Utility Service" Description="" SupportsConcurrentCommands="true">
+          <AttachedAttributes>
+            <AttachedAttribute Name="Execution Server Selector" IsOverridable="true" IsLocal="true" UserInput="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="Auto Add To Reservation" IsOverridable="true" IsLocal="true" UserInput="true">
+              <AllowedValues />
+            </AttachedAttribute>
+          </AttachedAttributes>
+          <AttributeValues>
+            <AttributeValue Name="Execution Server Selector" Value="" />
+            <AttributeValue Name="Auto Add To Reservation" Value="False" />
+            <AttributeValue Name="ExecutionServer" Value="Production" />
+          </AttributeValues>
+          <ParentModels />
+          <Drivers />
+          <Scripts>
+            <ScriptName>ReplaceServiceWithResource</ScriptName>
+            <ScriptName>RunCommandOnAllEntities</ScriptName>
+            <ScriptName>CleanUpResources</ScriptName>
+            <ScriptName>PrintMatrices</ScriptName>
+            <ScriptName>IsTeardownNeeded</ScriptName>
+            <ScriptName>CleanUpApps</ScriptName>
+            <ScriptName>CleanUpBlueprints</ScriptName>
+            <ScriptName>RunConnectedCommandOnAllEntities</ScriptName>
+          </Scripts>
+        </ResourceModel>
+      </Models>
+      <Categories />
+    </ResourceFamily>
+    <ResourceFamily Name="Virtual Machine" IsConnectable="true" Description="" IsSearchable="true" ResourceType="Application">
+      <AttachedAttributes>
+        <AttachedAttribute Name="OS" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="Power State" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="Lab" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="ExecutionServer" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="CPU Cores" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="RAM Size" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+      </AttachedAttributes>
+      <AttributeValues>
+        <AttributeValue Name="OS" Value="" />
+        <AttributeValue Name="Power State" Value="Off" />
+        <AttributeValue Name="Lab" Value="MSO" />
+        <AttributeValue Name="ExecutionServer" Value="Production" />
+        <AttributeValue Name="CPU Cores" Value="1" />
+        <AttributeValue Name="RAM Size" Value="2048" />
+      </AttributeValues>
+      <Models>
+        <ResourceModel Name="Linux Virtual Machine" ImagePath="Linux Virtual Machine_Model.png" Description="" SupportsConcurrentCommands="true">
+          <AttachedAttributes>
+            <AttachedAttribute Name="Enable_SSH" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="User" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="Password" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="SSH_Port" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+          </AttachedAttributes>
+          <AttributeValues>
+            <AttributeValue Name="Enable_SSH" Value="" />
+            <AttributeValue Name="User" Value="" />
+            <AttributeValue Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+            <AttributeValue Name="SSH_Port" Value="" />
+            <AttributeValue Name="OS" Value="" />
+            <AttributeValue Name="Power State" Value="Off" />
+            <AttributeValue Name="Lab" Value="MSO" />
+            <AttributeValue Name="ExecutionServer" Value="Production" />
+            <AttributeValue Name="CPU Cores" Value="1" />
+            <AttributeValue Name="RAM Size" Value="2048" />
+          </AttributeValues>
+          <ParentModels />
+          <Drivers />
+          <Scripts>
+            <ScriptName>GenericSetResourceStatus</ScriptName>
+            <ScriptName>VMPowerOn</ScriptName>
+            <ScriptName>GenericDelayPrint</ScriptName>
+            <ScriptName>VMReset</ScriptName>
+            <ScriptName>GenericRestoreSnapshot</ScriptName>
+            <ScriptName>VMPowerOff</ScriptName>
+            <ScriptName>VMHealthCheck</ScriptName>
+            <ScriptName>GenericSnapshot</ScriptName>
+          </Scripts>
+        </ResourceModel>
+      </Models>
+      <Categories />
+    </ResourceFamily>
+    <ResourceFamily Name="Web Applications" Description="" IsSearchable="true" ResourceType="Application">
+      <AttachedAttributes>
+        <AttachedAttribute Name="OS" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="User" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="Password" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="Power State" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="Lab" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="ExecutionServer" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+        <AttachedAttribute Name="Web Interface" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+      </AttachedAttributes>
+      <AttributeValues>
+        <AttributeValue Name="OS" Value="" />
+        <AttributeValue Name="User" Value="" />
+        <AttributeValue Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+        <AttributeValue Name="Power State" Value="Off" />
+        <AttributeValue Name="Lab" Value="Global" />
+        <AttributeValue Name="ExecutionServer" Value="Production" />
+        <AttributeValue Name="Web Interface" Value="" />
+      </AttributeValues>
+      <Models>
+        <ResourceModel Name="Apache Website" ImagePath="Apache Website_Model.png" Description="" SupportsConcurrentCommands="true">
+          <AttachedAttributes>
+            <AttachedAttribute Name="Enable_SSH" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+          </AttachedAttributes>
+          <AttributeValues>
+            <AttributeValue Name="Enable_SSH" Value="" />
+            <AttributeValue Name="OS" Value="" />
+            <AttributeValue Name="User" Value="" />
+            <AttributeValue Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+            <AttributeValue Name="Power State" Value="Off" />
+            <AttributeValue Name="Lab" Value="Global" />
+            <AttributeValue Name="ExecutionServer" Value="Production" />
+            <AttributeValue Name="Web Interface" Value="" />
+          </AttributeValues>
+          <ParentModels />
+          <Drivers />
+          <Scripts>
+            <ScriptName>GenericSetResourceStatus</ScriptName>
+            <ScriptName>Configure_Service_Endpoint</ScriptName>
+            <ScriptName>Wait_For_Traffic</ScriptName>
+            <ScriptName>install_from_artifactory</ScriptName>
+            <ScriptName>Start_Traffic</ScriptName>
+            <ScriptName>GenericHealthCheck</ScriptName>
+          </Scripts>
+        </ResourceModel>
+        <ResourceModel Name="Sales Web App" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes>
+            <AttachedAttribute Name="Comm_IP" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+          </AttachedAttributes>
+          <AttributeValues>
+            <AttributeValue Name="Comm_IP" Value="" />
+            <AttributeValue Name="OS" Value="" />
+            <AttributeValue Name="User" Value="" />
+            <AttributeValue Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+            <AttributeValue Name="Power State" Value="Off" />
+            <AttributeValue Name="Lab" Value="Global" />
+            <AttributeValue Name="ExecutionServer" Value="Production" />
+            <AttributeValue Name="Web Interface" Value="" />
+          </AttributeValues>
+          <ParentModels />
+          <Drivers />
+          <Scripts>
+            <ScriptName>Configure_Service_Endpoint</ScriptName>
+          </Scripts>
+        </ResourceModel>
+        <ResourceModel Name="SaaS Application" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes />
+          <AttributeValues>
+            <AttributeValue Name="OS" Value="" />
+            <AttributeValue Name="User" Value="" />
+            <AttributeValue Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+            <AttributeValue Name="Power State" Value="Off" />
+            <AttributeValue Name="Lab" Value="Global" />
+            <AttributeValue Name="ExecutionServer" Value="Production" />
+            <AttributeValue Name="Web Interface" Value="" />
+          </AttributeValues>
+          <ParentModels />
+          <Drivers />
+          <Scripts>
+            <ScriptName>Activate_Virtual_Endpoint</ScriptName>
+            <ScriptName>Wait_For_Traffic</ScriptName>
+            <ScriptName>Start_Traffic</ScriptName>
+            <ScriptName>Deactivate_Virtual_Endpoint</ScriptName>
+          </Scripts>
+        </ResourceModel>
+      </Models>
+      <Categories />
+    </ResourceFamily>
+    <ResourceFamily Name="Apps Orchestration" Description="" IsService="true" ServiceType="Orchestration">
+      <AttachedAttributes />
+      <AttributeValues />
+      <Models>
+        <ResourceModel Name="Simple" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes />
+          <AttributeValues />
+          <ParentModels />
+          <Drivers>
+            <DriverName>Deployment Orchestrator</DriverName>
+          </Drivers>
+          <Scripts />
+        </ResourceModel>
+      </Models>
+      <Categories />
+    </ResourceFamily>
+  </ResourceFamilies>
+  <DriverDescriptors>
+    <DriverDescriptor Name="Deployment Orchestrator" Description="Deploy App" DriverType="PythonDriver" />
+    <DriverDescriptor Name="Python Setup &amp; Teardown" Description="This driver is used for running Python scripts in the environment setup and teardown. To use this driver, make sure you select a suitable setup and/or teardown script." DriverType="TestShellDriver" />
+  </DriverDescriptors>
+  <ScriptDescriptors>
+    <ScriptDescriptor Name="ReplaceServiceWithResource" Description="Replace a service with an existing/new resource.&#xD;&#xA;Version 1.0&#xD;&#xA;Required variables: service_alias, resource_name, resource_family, resource_model, create_resource(True / False), share_resource (True / False)" Version="1.0">
+      <ScriptInputs>
+        <ScriptInput Name="create_resource" />
+        <ScriptInput Name="resource_family" />
+        <ScriptInput Name="resource_model" />
+        <ScriptInput Name="resource_name" />
+        <ScriptInput Name="service_alias" />
+        <ScriptInput Name="share_resource" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="RunCommandOnAllEntities" Description="Run Command on All Entities in the reservation" Version="1.1">
+      <ScriptInputs>
+        <ScriptInput Name="command_name" />
+        <ScriptInput Name="command_inputs" />
+        <ScriptInput Name="print_output" />
+        <ScriptInput Name="use_exact_name" DefaultValue="False" />
+        <ScriptInput Name="run_synchronously" DefaultValue="False" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="CleanUpResources" Version="1.0" Alias="CleanUpResources">
+      <ScriptInputs>
+        <ScriptInput Name="domains" DefaultValue="Global" />
+        <ScriptInput Name="dry_run" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="PrintMatrices" Version="1.0">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="IsTeardownNeeded" Description="Check if the current environment needs to be torn down" CategoryName="Administration" Version="1.0">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="CleanUpApps" Version="1.0" Alias="CleanUpApps">
+      <ScriptInputs>
+        <ScriptInput Name="domains" DefaultValue="Global" />
+        <ScriptInput Name="dry_run" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="CleanUpBlueprints" Alias="CleanUpBlueprints">
+      <ScriptInputs>
+        <ScriptInput Name="domains" DefaultValue="Demo Advanced" />
+        <ScriptInput Name="input_file" DefaultValue="\\csl-storage\Storage\ApprovedBlueprints.txt" />
+        <ScriptInput Name="dry_run" DefaultValue="True" Description="If not &quot;False&quot;, Blueprints won't actually be deleted" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="RunConnectedCommandOnAllEntities" Description="Run Connected Command on All Entities in the reservation&#xD;&#xA;Version 1.0&#xD;&#xA;Required variables: command_name, command_inputs (csv), print_output" Version="1.1">
+      <ScriptInputs>
+        <ScriptInput Name="command_name" />
+        <ScriptInput Name="command_inputs" />
+        <ScriptInput Name="command_tag" />
+        <ScriptInput Name="print_output" />
+        <ScriptInput Name="use_exact_name" />
+        <ScriptInput Name="run_synchronously" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="GenericSetResourceStatus" Description="Updates the status icon on a resource given the input status and description (hover text)." CategoryName="Hidden Commands" Version="1.1.2" Alias="SetResourceStatus">
+      <ScriptInputs>
+        <ScriptInput Name="Status" DefaultValue="Offline" Description="key to set" />
+        <ScriptInput Name="Description" Description="hover text" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="VMPowerOn" CategoryName="Manage" Version="1.0.1" Alias="Power On">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="GenericDelayPrint" Description="Prints a message then sleeps" CategoryName="Hidden Commands" Version="1.0.0">
+      <ScriptInputs>
+        <ScriptInput Name="MSG" Description="Message to write" />
+        <ScriptInput Name="DELAY" DefaultValue="" Description="How long to wait" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="VMReset" Description="Resets the state of the VM." CategoryName="Manage" Version="1.0.3" Alias="Reset">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="GenericRestoreSnapshot" Description="Restore the resource to the latest snapshot" CategoryName="Manage" Version="1.0" Alias="Restore to snapshot">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="VMPowerOff" CategoryName="Manage" Version="1.0.1" Alias="Power Off">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="VMHealthCheck" Description="Runs a healthcheck by delaying a random amount of time then setting status dot to green via SetREsourceStatus." CategoryName="Manage" Version="1.0.1" Alias="HealthCheck">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="GenericSnapshot" Description="Changes progress bar on resource with random delays to simulate backing it up." CategoryName="Manage" Version="1.0.4" Alias="Snapshot">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="Configure_Service_Endpoint" CategoryName="Deployment Testing" Alias="Configure Service Endpoint">
+      <ScriptInputs>
+        <ScriptInput Name="Endpoint" DefaultValue="https://login.salesforce.com" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="Wait_For_Traffic" CategoryName="Traffic" Alias="Wait for Traffic to Finish">
+      <ScriptInputs>
+        <ScriptInput Name="session_id_target" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="install_from_artifactory" CategoryName="Installation" Version="1.0" Alias="install_from_artifactory">
+      <ScriptInputs>
+        <ScriptInput Name="ansible_playbook" DefaultValue="Web Server Install" />
+        <ScriptInput Name="artifactory_server_address" DefaultValue="35.160.56.134" />
+        <ScriptInput Name="repository_name" DefaultValue="CloudShell-Live-CI" />
+      </ScriptInputs>
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="Start_Traffic" CategoryName="Traffic" Alias="Start Traffic">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="GenericHealthCheck" Description="Runs a health check by delaying a random amount of time then setting status dot to green via SetResourceStatus." CategoryName="Manage" Version="1.0.4" Alias="Health Check">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="Activate_Virtual_Endpoint" Description="Activate this CA Service Virtualization virtualized API and propagate the configuration to deployed web servers" CategoryName="Service Virtualization" Alias="Activate Virtual Endpoint">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="Deactivate_Virtual_Endpoint" Description="Deactivates a CA Service Virtualization virtualized API" CategoryName="Service Virtualization" Alias="Deactivate Virtual Endpoint">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="Default Sandbox Teardown" CategoryName="Hidden Commands" Version="1.0.1.2 " Alias="Teardown script">
+      <ScriptInputs />
+    </ScriptDescriptor>
+    <ScriptDescriptor Name="Default Sandbox Setup" CategoryName="Hidden Commands" Version="1.0.1.2 " Alias="Setup script">
+      <ScriptInputs />
+    </ScriptDescriptor>
+  </ScriptDescriptors>
+</DataModelInfo>

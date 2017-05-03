@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?>
+<uc-export clientvers="12.0.0-dev+main.hf.1.build.3581">
+<VARA OVD_VRName="FREI" data_type="STATIC" name="PCK.CUSTOM_QUALI_SANDBOX.PUB.VAR.METADATA" replacementmode="2">
+<HEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="Categories" Value="" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Company" Value="Custom" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Dependencies" Value="PCK.ITPA_SHARED ~&gt; 1.1,PCK.AUTOMIC_RA_REST ~&gt; 1.0" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Description" Value="" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Homepage" Value="www.yourcompany.com" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="License" Value="" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Name" Value="PCK.CUSTOM_QUALI_SANDBOX" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Package Format Version" Value="0.3.0" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Title" Value="Quali Sandbox" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Version" Value="1.0.0" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Action.Builder.Version" Value="2.0.0.GA3-1771" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Action.Builder.Library" Value="12.0.0-dev+main.build.3446" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Action.Builder.Exported" Value="2017-05-03T05:19:49+0000" Value1="" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+</uc-export>
